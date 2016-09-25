@@ -28,18 +28,15 @@ def FizzBuzz n
   end
 end
 
-ary = Proc.new do |a,b|
-  a+b
-end
-aa = ary.curry.call(2)
-p aa.call(5)
-p aa.call(8)
+
 p FizzBuzz(10).to_s
 p FizzBuzz 12
 p FizzBuzz 15
 p FizzBuzz(22).to_s
 
-add = proc { |x, y| x + y }
-add_one = add.curry.call(1) # => #<Proc:0x00...>
-p add_one.call(3) # => 4
-p add_one.call(9) # => 10
+ary = proc do |a,b|
+  a+b
+end
+aa = ary.curry.call(2)
+p aa.call(5)
+p aa.call(8)
